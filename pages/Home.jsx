@@ -15,7 +15,7 @@ export function Home() {
 
   function loadContacts() {
     const nums = contactService.renderNums()
-    dispatch({ type: SET_CONTACTS, contacts: nums }) // Dispatch the
+    dispatch({ type: SET_CONTACTS, contacts: nums })
   }
 
   if (contacts.length === 0) return <div>Loading...</div>
