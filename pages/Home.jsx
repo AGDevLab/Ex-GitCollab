@@ -5,18 +5,14 @@ import { SET_CONTACTS } from '../store/store.js' // Import the action type direc
 const { Link } = ReactRouterDOM
 
 export function Home() {
-  //   const [contacts, setContacts] = useState(contactService.renderCards())
-
   useEffect(() => {
     loadContacts()
   }, [])
 
-  // Access the contacts state from the Redux store
   const contacts = useSelector((state) => state.contacts)
-  // Get the dispatch function to send actions to the Redux store
+
   const dispatch = useDispatch()
 
-  // Function to load contacts and dispatch the SET_CONTACTS action
   function loadContacts() {
     const nums = contactService.renderNums()
     dispatch({ type: SET_CONTACTS, contacts: nums }) // Dispatch the
@@ -29,9 +25,9 @@ export function Home() {
       <section className='home'>
         <h1>Simple Home Page</h1>
         {contacts.map((num, index) => (
-          <article key={index} className='number'>
+          <button key={index} className='number'>
             {num}
-          </article>
+          </button>
         ))}
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
