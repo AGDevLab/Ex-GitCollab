@@ -2,10 +2,10 @@
 
 /* Base */
 
-@import 'base/layout.css';
+@import './base/layout.css';
 
 /* Components */
 
 /* @import "cmps/UserDetails.css";
 @import "cmps/contacntIndex.css"; */
-@import 'cmps/Home.css';
+@import './cmps/Home.css';
