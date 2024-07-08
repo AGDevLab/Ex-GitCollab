@@ -1,16 +1,16 @@
 // const Router = ReactRouterDOM.HashRouter
-const Router = ReactRouterDOM.BrowserRouter
-const { Provider } = ReactRedux
+const Router = ReactRouterDOM.BrowserRouter;
+const { Provider } = ReactRedux;
 
-// import { store } from "./store/store.js";
-import { RootCmp } from './RootCmp.jsx'
+import { store } from "./store/store.js";
+import { RootCmp } from "./RootCmp.jsx";
 
-const elContainer = document.getElementById('root')
-const root = ReactDOM.createRoot(elContainer)
+const elContainer = document.getElementById("root");
+const root = ReactDOM.createRoot(elContainer);
 root.render(
-  //   <Provider store={store}>
-  <Router>
-    <RootCmp />
-  </Router>
-  //   </Provider>
-)
+  <Provider store={store}>
+    <Router>
+      <RootCmp />
+    </Router>
+  </Provider>
+);
