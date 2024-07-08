@@ -6,6 +6,6 @@
 
 /* Components */
 
-/* @import "cmps/UserDetails.css";
-@import "cmps/contacntIndex.css"; */
+/* @import "cmps/UserDetails.css"; */
+@import './cmps/Contactindex.css';
 @import './cmps/Home.css';
