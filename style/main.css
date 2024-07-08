@@ -1,0 +1,11 @@
+/* Setup */
+
+/* Base */
+
+@import 'base/layout.css';
+
+/* Components */
+
+/* @import "cmps/UserDetails.css";
+@import "cmps/contacntIndex.css"; */
+@import 'cmps/Home.css';
