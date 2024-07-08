@@ -1,20 +1,10 @@
 export const contactService = {
-  renderCards,
+  renderNums,
 }
 
-function renderCards() {
+function renderNums() {
   const nums = createNums()
-  const strHtml = nums
-    .map(
-      (num) => `
-            <article 
-                class="card">${num}
-            </article>`
-    )
-    .join('')
-  console.log(strHtml)
-
-  return strHtml
+  return nums
 }
 
 function createNums() {
@@ -37,5 +27,5 @@ function createNums() {
 function getRandomInt(min, max) {
   min = Math.ceil(min)
   max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min) + min)
 }

@@ -2,21 +2,28 @@ import { contactService } from '../services/contact.service.js'
 const { useEffect, useState } = React
 
 export function Home() {
-  //   const [contacts, setContacts] = useState(contactService.renderCards())
+  const [contacts, setContacts] = useState([])
 
-  //   useEffect(() => {
-  //     loadContacts()
-  //   }, [])
+  useEffect(() => {
+    loadContacts()
+  }, [])
 
   function loadContacts() {
-    contactService.renderCards()
+    const nums = contactService.renderNums()
+    setContacts(nums)
   }
-  //   if (!contacts) return <div>Loading...</div>
+
+  if (contacts.length === 0) return <div>Loading...</div>
+
   return (
     <React.Fragment>
       <section className='home'>
         <h1>Simple Home Page</h1>
-        {loadContacts()}
+        {contacts.map((num, index) => (
+          <article key={index} className='number'>
+            {num}
+          </article>
+        ))}
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
           obcaecati quae facere praesentium quis id modi nihil quisquam odio cum
