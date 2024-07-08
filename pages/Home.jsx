@@ -24,11 +24,13 @@ export function Home() {
     <React.Fragment>
       <section className='home'>
         <h1>Simple Home Page</h1>
-        {contacts.map((num, index) => (
-          <button key={index} className='number'>
-            {num}
-          </button>
-        ))}
+        <div className='number-container'>
+          {contacts.map((num, index) => (
+            <button key={index} className='number'>
+              {num}
+            </button>
+          ))}
+        </div>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
           obcaecati quae facere praesentium quis id modi nihil quisquam odio cum
