@@ -1,35 +1,34 @@
-import { contactService } from "../services/contact.service.js";
-const { useEffect, useState } = React;
-import { useSelector, useDispatch } from "react-redux";
-import { contactService } from "../services/contact.service.js";
-import { SET_CONTACTS } from "../store/store.js"; // Import the action type directly
+import { contactService } from '../services/contact.service.js'
+const { useEffect, useState } = React
+const { useSelector, useDispatch } = ReactRedux
+import { SET_CONTACTS } from '../store/store.js' // Import the action type directly
 
 export function Home() {
   //   const [contacts, setContacts] = useState(contactService.renderCards())
 
   useEffect(() => {
-    loadContacts();
-  }, []);
+    loadContacts()
+  }, [])
 
   // Access the contacts state from the Redux store
-  const contacts = useSelector((state) => state.contacts);
+  const contacts = useSelector((state) => state.contacts)
   // Get the dispatch function to send actions to the Redux store
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   // Function to load contacts and dispatch the SET_CONTACTS action
   function loadContacts() {
-    const nums = contactService.renderNums();
-    dispatch({ type: SET_CONTACTS, contacts: nums }); // Dispatch the
+    const nums = contactService.renderNums()
+    dispatch({ type: SET_CONTACTS, contacts: nums }) // Dispatch the
   }
 
-  if (contacts.length === 0) return <div>Loading...</div>;
+  if (contacts.length === 0) return <div>Loading...</div>
 
   return (
     <React.Fragment>
-      <section className="home">
+      <section className='home'>
         <h1>Simple Home Page</h1>
         {contacts.map((num, index) => (
-          <article key={index} className="number">
+          <article key={index} className='number'>
             {num}
           </article>
         ))}
@@ -40,5 +39,5 @@ export function Home() {
         </p>
       </section>
     </React.Fragment>
-  );
+  )
 }
