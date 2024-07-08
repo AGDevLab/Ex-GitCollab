@@ -2,6 +2,7 @@ import { contactService } from '../services/contact.service.js'
 const { useEffect, useState } = React
 const { useSelector, useDispatch } = ReactRedux
 import { SET_CONTACTS } from '../store/store.js' // Import the action type directly
+const { Link } = ReactRouterDOM
 
 export function Home() {
   //   const [contacts, setContacts] = useState(contactService.renderCards())
@@ -37,6 +38,8 @@ export function Home() {
           obcaecati quae facere praesentium quis id modi nihil quisquam odio cum
           porro nisi dolores rerum animi, illum velit explicabo quia harum!
         </p>
+        <Link to='/contacts'>Go to Contacts</Link>{' '}
+        {/* Add a link to the ContactIndex */}
       </section>
     </React.Fragment>
   )
